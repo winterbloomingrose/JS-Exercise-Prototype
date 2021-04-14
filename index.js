@@ -39,10 +39,28 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person() {
-    
-  }
- 
+  function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      this.stomach = [];
+      Person.prototype.eat = function () {
+        if (this.stomach.length<10){
+          this.stomach.push("food");
+        }
+        else {
+          return this.stomach
+        }
+      }
+      Person.prototype.poop = function () {
+        this.stomach.length=0;
+      }
+      Person.prototype.toString = function () {
+        `${this.name},${this.age}`
+      }
+    }
+  
+    const homoSapien = new Person("entity", 40);
+    console.log(homoSapien.eat());
  
 
   
