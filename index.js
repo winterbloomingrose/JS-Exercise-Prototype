@@ -59,8 +59,20 @@ function Airplane(name) {
       }
     }
   
-    const homoSapien = new Person("Entity", 40);
-    console.log(homoSapien.eat("ice cream"));
+    const homoSapien = new Person("Entity", 0);
+    /* feeding - i gotta find a more efficient way to do this */
+      homoSapien.eat('apple');
+      homoSapien.eat('butter');
+      homoSapien.eat('crepe');
+      homoSapien.eat('donut');
+      homoSapien.eat('eclair');
+      homoSapien.eat('french fries');
+      homoSapien.eat('gelato');
+      homoSapien.eat('hot dog');
+      homoSapien.eat('ice cream');
+      homoSapien.eat('jerky');
+      /* test: will not print bc stomach is full */ homoSapien.eat('kool aid'); 
+    console.log(homoSapien);
 
   /*
     TASK 2
@@ -76,8 +88,20 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
-    
+ function Car(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+    Car.prototype.fill = function (gallons) {
+      if (this.gallons >= 0) {
+        this.tank = this.tank + this.gallons;
+        return this.tank;  
+      }
+      else {
+        return this.gallons;
+      }
+    }
   }
   
   
