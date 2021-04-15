@@ -43,10 +43,10 @@ function Airplane(name) {
       this.name = name;
       this.age = age;
       this.stomach = [];
-      Person.prototype.eat = function () {
+      Person.prototype.eat = function (food) {
         if (this.stomach.length<10){
-          this.stomach.push("food");
-        }
+          this.stomach.push(food);
+        } 
         else {
           return this.stomach
         }
@@ -55,18 +55,13 @@ function Airplane(name) {
         this.stomach.length=0;
       }
       Person.prototype.toString = function () {
-        `${this.name},${this.age}`
+        return `${this.name},${this.age}`
       }
     }
   
-    const homoSapien = new Person("entity", 40);
-    console.log(homoSapien.eat());
- 
+    const homoSapien = new Person("Entity", 40);
+    console.log(homoSapien.eat("ice cream"));
 
-  
-  
-  
-  
   /*
     TASK 2
       - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
