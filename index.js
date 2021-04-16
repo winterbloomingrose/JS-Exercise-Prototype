@@ -95,8 +95,8 @@ function Airplane(name) {
     this.odometer = 0;
     Car.prototype.fill = function (gallons) {
       if (this.gallons >= 0) {
-        this.tank = this.tank + this.gallons;
-        return this.tank;  
+        this.tank = this.tank + gallons;
+        return this.tank;
       }
       else {
         return this.gallons;
@@ -104,6 +104,8 @@ function Airplane(name) {
     }
   }
   
+  const lightningMcQueen = new Car("sapient", 50)
+  console.log(lightningMcQueen.fill("50"))
   
   /*
     TASK 3
@@ -112,8 +114,12 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
+ function Baby(name, age, favoriteToy) {
+    Person.call(this, name, age);
+    this.favoriteToy = favoriteToy;
+    Baby.prototype.play = function(favoriteToy) {
+      return `Playing with ${this.favoriteToy}`;
+    }
   }
  
   
