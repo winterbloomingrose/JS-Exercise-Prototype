@@ -126,10 +126,12 @@ function Airplane(name) {
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. window binding: the "this" keyword is forced to be the child of the window/global scope. there is nothing "closer" for it to bind to and it is outside any particular object.
+    2. implicit binding: it is inside of a specific declared object. it binds to this object. 
+    3. 'new' binding: it binds to a 'new'ly constructed constant variable  that is created with a constructor function. 'new' directs 'this' to the newly created object.
+    4. explicit binding: using 'call' 'bind' or 'apply' to point 'this' to a certain value.
+
+    references for myself: https://alligator.io/js/this-keyword/ 
   */
   
   
